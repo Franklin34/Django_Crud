@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 75%;
+  margin-left:200px;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-family: 'Times New Roman';
+}
+#Personas{
+font-size:18px;
+font-family: Garamond, serif;
+margin-left: 200px
+}
+h1{
+font-family: Garamond, serif;
+text-align: center;
+}
+br{
+font-family: Garamond, serif;
+text-align: center;
+}
+td a{
+color: black;
+}
+td a:hover{
+color: rgba(0,128,0,0.6);
+}
+div a{
+font-size:18px;
+font-family: Garamond, serif;
+margin-left: 200px;
+color: black;
+}
+div a:hover{
+color: rgba(0,128,0,0.6);
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienvenido</title>
+</head>
+<body>
+<h1 >Sistema de Administracion de Personas(SAP)</h1>
+<div id="Personas">
+    Número de personas: {{no_personas}}
+</div>
+<div>
+    <div>
+        <a href="nueva_persona">Agregar Persona</a>
+    </div>
+    <br>
+    <table border="1" id="customers">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre completo</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for persona in personas %}
+        <tr>
+            <td>{{persona.id}}</td>
+            <td>{{persona.nombre}} {{persona.apellido}}</td>
+            <td>{{persona.email}}</td>
+            <td><a href="detalle_persona/{{persona.id}}">Ver</a></td>
+            <td><a href="editar_persona/{{persona.id}}">Editar</a></td>
+            <td><a href="eliminar_persona/{{persona.id}}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

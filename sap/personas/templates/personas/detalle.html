@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+h1{
+font-family: Garamond, serif;
+text-align: center;
+}
+
+#div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 5px;
+  width: 352px;
+  margin-left: 550px;
+  margin-top: 170px;
+}
+div {
+    font-family: Garamond, serif;
+    margin-top: 29px;
+    font-size: 21px;
+    margin-left: 15px;
+}
+#a{
+    font-family: Garamond, serif;
+    margin-top: 29px;
+    font-size: 21px;
+    margin-left: 15px;
+    color: rgba(0,128,0,0.6);
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle Persona</title>
+</head>
+<body>
+<div id="div">
+      <h1>Detalle de la Persona</h1>
+      <div>Id Persona: {{persona.id}}</div>
+      <div>Nombre: {{persona.nombre}}</div>
+      <div>Apellido: {{persona.apellido}}</div>
+      <div>Email: {{persona.email}}</div>
+        <br>
+      <a  id="a" href="{% url 'index' %}">Regresar al Inicio</a>
+</div>
+</body>
+</html>
